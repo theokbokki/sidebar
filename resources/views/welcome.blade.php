@@ -16,7 +16,9 @@
                     <span class="block w-5 h-5 text-neutral-500"><x-lucide-panel-left /></span>
                 </button>
             </div>
+            <x-sidebar-spacer />
             <div class="flex-1 flex flex-col"></div>
+            <x-sidebar-spacer />
             <div class="flex flex-col gap-1 px-3">
                 <x-sidebar-link content="settings" href="#">
                     <x-slot name="icon"><x-lucide-settings/></x-slot name="icon">
