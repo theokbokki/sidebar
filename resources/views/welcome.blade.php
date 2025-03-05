@@ -10,8 +10,8 @@
     <body class="flex w-screen h-screen">
         <x-sidebar collapsible="icon">
             <x-sidebar-toggle srOnlyContent="Sidebar toggle"/>
-            <div class="flex px-3 group-[.collapsed]/sidebar:justify-center">
-                <a href="#" class="p-2"><x-icon-logo/></a>
+            <div class="flex px-3">
+                <a href="#" class="flex items-center justify-center w-9 h-9 hover:bg-stone-200/50 rounded-md"><x-icon-logo/></a>
             </div>
             <x-sidebar-spacer />
             <div class="flex-1 flex flex-col overflow-auto">

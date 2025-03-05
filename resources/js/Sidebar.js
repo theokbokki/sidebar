@@ -27,6 +27,7 @@ export default class Sidebar {
     setup() {
         this.isOpen = true;
         this.collapsible = this.el.dataset.collapsible;
+        this.el.dataset.collapsible = "";
     }
 
     setEvents() {
@@ -38,9 +39,9 @@ export default class Sidebar {
 
     toggle() {
         if (this.isOpen) {
-            this.el.classList.add("collapsed");
+            this.el.dataset.collapsible = this.collapsible;
         } else {
-            this.el.classList.remove("collapsed");
+            this.el.dataset.collapsible = "";
         }
 
         this.isOpen = !this.isOpen;
