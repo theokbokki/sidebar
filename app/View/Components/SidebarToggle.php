@@ -6,18 +6,18 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Sidebar extends Component
+class SidebarToggle extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public ?string $collapsible) {}
+    public function __construct(public string $srOnlyContent) {}
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components.sidebar');
+        return view('components.sidebar-toggle');
     }
 }

@@ -8,13 +8,10 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="flex w-screen h-screen">
-        <x-sidebar>
-            <div class="flex items-center justify-between px-5">
-                <a href="#"><x-icon-logo/></a>
-                <button class="p-1 cursor-pointer rounded-md hover:bg-neutral-200/50">
-                    <span class="sr-only">Navigation toggle</span>
-                    <span class="block w-5 h-5 text-neutral-500"><x-lucide-panel-left /></span>
-                </button>
+        <x-sidebar collapsible="icon">
+            <x-sidebar-toggle srOnlyContent="Sidebar toggle"/>
+            <div class="flex px-3 group-[.collapsed]/sidebar:justify-center">
+                <a href="#" class="p-2"><x-icon-logo/></a>
             </div>
             <x-sidebar-spacer />
             <div class="flex-1 flex flex-col overflow-auto">
@@ -26,7 +23,6 @@
                         <x-sidebar-link content="Architecture" href="#" />
                         <x-sidebar-link content="Websockets" href="#" />
                     </x-sidebar-group>
-                    <x-sidebar-spacer />
                     <x-sidebar-group title="Chrome">
                         <x-slot name="icon"><x-lucide-layout/></x-slot>
                         <x-sidebar-link content="Chrome" href="#" />
