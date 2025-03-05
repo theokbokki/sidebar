@@ -21,6 +21,7 @@ export default class Sidebar {
 
     getElements() {
         this.toggleBtn = this.el.querySelector("[data-sidebar-toggle]");
+        this.groupToggles = this.el.querySelectorAll("[data-sidebar-group] button");
     }
 
     setup() {
@@ -30,6 +31,9 @@ export default class Sidebar {
 
     setEvents() {
         this.toggleBtn.addEventListener("click", this.toggle.bind(this));
+        this.groupToggles.forEach((toggle) => {
+            toggle.addEventListener("click", this.toggleGroup.bind(this));
+        });
     }
 
     toggle() {
@@ -40,6 +44,15 @@ export default class Sidebar {
         }
 
         this.isOpen = !this.isOpen;
+    }
 
+    toggleGroup(e) {
+        if (e.currentTarget.dataset.state === "open") {
+            e.currentTarget.dataset.state = "closed";
+
+            return;
+        }
+
+        e.currentTarget.dataset.state = "open";
     }
 }
